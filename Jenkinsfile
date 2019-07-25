@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'Master'
+    }
     stages {
         stage ('SCM checkout-1'){
             steps  {
