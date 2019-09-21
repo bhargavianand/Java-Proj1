@@ -3,7 +3,7 @@ pipeline {
     	stages {  
         	stage ("SCM Chkout-1"){
 			 steps {
-               			 sh ls -l
+               			 sh 'ls -l'
            			 }
 		}
         }
