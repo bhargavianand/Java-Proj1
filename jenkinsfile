@@ -9,9 +9,9 @@ pipeline {
     }
     stages {  
         stage ("SCM Chkout-1"){
-			agent { label 'Java' }
+	
             steps {
-                git branch: '$Select_branch', url: 'https://github.com/Vishwanathms/SampleMaven' 
+                sh ls -l
             }
 		}
     }
