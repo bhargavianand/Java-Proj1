@@ -6,13 +6,12 @@ pipeline {
 	parameters {
         string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
         choice(choices: ['master', 'B1'], description: 'What branch?', name: 'Select_branch')
-    }
-    stages {  
-        stage ("SCM Chkout-1"){
-	
-            steps {
-                sh ls -l
-            }
+    	}
+    	stages {  
+        	stage ("SCM Chkout-1"){
+			 steps {
+               			 sh ls -l
+           			 }
 		}
-    }
+        }
 }
