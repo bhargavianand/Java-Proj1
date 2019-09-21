@@ -1,5 +1,12 @@
 pipeline { 
 	agent any
+		triggers {
+		cron('H H/3 * * *')
+	}
+
+parameters {
+        choice(choices: ['master', 'B1'], description: 'What branch?', name: 'Select_branch')
+    	}
     	stages {  
         	stage ("SCM Chkout-1"){
 			 steps {
