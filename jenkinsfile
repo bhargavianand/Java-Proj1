@@ -1,16 +1,17 @@
-pipeline {
-agent { label 'Java' }
-stages {
-stage ("SCM Chkout-1"){
-steps {
-git 'https://github.com/bhargavianand/Java-Proj1.git'
-}
-}
-stage ("Java execute"){
-steps {
-sh label: '', script: '''javac Sample.java
-java Sample'''
-}
-}
-}
-}
+pipeline { 
+	agent none
+	triggers {
+		cron('H H/3 * * *')
+	}
+	parameters {
+        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
+        choice(choices: ['master', 'B1'], description: 'What branch?', name: 'Select_branch')
+    }
+    stages {  
+        stage ("SCM Chkout-1"){
+			agent { label 'Java' }
+            steps {
+                git branch: '$Select_branch', url: 'https://github.com/Vishwanathms/SampleMaven' 
+            }
+		}
+    }
