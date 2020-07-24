@@ -1,6 +1,5 @@
 class Sample{
 public static void main(String args[]) throws InterruptedException {
-	System.out.println("Hello Java");
-	Thread.sleep(15000);
+	System.out.println("Hello my practise session");
 	}
 }
